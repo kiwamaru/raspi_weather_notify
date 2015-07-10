@@ -26,11 +26,11 @@ GPIO.setup(GREENPIN,GPIO.OUT)
 
 print precip
 
-if precip > 0.81:
+if precip > 0.80:
     GPIO.output(REDPIN,GPIO.LOW)
     GPIO.output(BLUEPIN,GPIO.HIGH)
     GPIO.output(GREENPIN,GPIO.HIGH)
-elif precip > 0.55:
+elif precip > 0.50:
     GPIO.output(REDPIN,GPIO.LOW)
     GPIO.output(BLUEPIN,GPIO.HIGH)
     GPIO.output(GREENPIN,GPIO.LOW)
