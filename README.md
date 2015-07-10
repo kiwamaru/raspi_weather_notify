@@ -1,13 +1,13 @@
 raspi_weather_notify
 ======================
-Raspberry PIとフルカラーLEDを使用して
+Raspberry PI2 model bとフルカラーLEDを使用して
 今日の天気の降水確率を色で表します。
  
 使い方
 ------
 ### 必要機器 ###
 
-フルカラーLED 型番:OSTA71A1D-A
+角型フルカラーLED 型番:OSTA71A1D-A
 
 * REDカソードは65Ωの抵抗を経由してGPIO18(ピン番号12)
 * BLUEカソードは5Ωの抵抗を経由してGPIO13(ピン番号33)
@@ -15,16 +15,23 @@ Raspberry PIとフルカラーLEDを使用して
 * アノードはGND(ピン番号9)
 
 ### 必要ライブラリのインストール ###
+GPIOモジュールをインストール
 
 `$ sudo apt-get install python-rpi.gpio`
+
+pywapiをインストール
+
 https://launchpad.net/python-weather-api/trunk/0.3.8/+download/pywapi-0.3.8.tar.gz
 をダウンロードして展開後、
+
 `$ python setup.py build`
+
 `$ python setup.py install`
 
 ### CRONへ登録 ###
 
 `$ sudo crontab -e`
+
 `*/5 * * * * sudo python /home/pi/python_code/raspi_weather_notify/weather.py`
  
 パラメータの解説
