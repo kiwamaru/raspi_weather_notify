@@ -1,41 +1,41 @@
 raspi_weather_notify
 ======================
-Raspberry PI‚Æƒtƒ‹ƒJƒ‰[LED‚ðŽg—p‚µ‚Ä
-¡“ú‚Ì“V‹C‚Ì~…Šm—¦‚ðF‚Å•\‚µ‚Ü‚·B
+Raspberry PIã¨ãƒ•ãƒ«ã‚«ãƒ©ãƒ¼LEDã‚’ä½¿ç”¨ã—ã¦
+ä»Šæ—¥ã®å¤©æ°—ã®é™æ°´ç¢ºçŽ‡ã‚’è‰²ã§è¡¨ã—ã¾ã™ã€‚
  
-Žg‚¢•û
+ä½¿ã„æ–¹
 ------
-### •K—v‹@Ší ###
- ƒtƒ‹ƒJƒ‰[LED Œ^”Ô:OSTA71A1D-A
+### å¿…è¦æ©Ÿå™¨ ###
+ ãƒ•ãƒ«ã‚«ãƒ©ãƒ¼LED åž‹ç•ª:OSTA71A1D-A
 
-REDƒJƒ\[ƒh‚Í65ƒ¶‚Ì’ïR‚ðŒo—R‚µ‚ÄGPIO18(ƒsƒ“”Ô†12)
-BLUEƒJƒ\[ƒh‚Í5ƒ¶‚Ì’ïR‚ðŒo—R‚µ‚ÄGPIO13(ƒsƒ“”Ô†33)
-GREENƒJƒ\[ƒh‚Í5ƒ¶‚Ì’ïR‚ðŒo—R‚µ‚ÄGPIO19(ƒsƒ“”Ô†35)
-ƒAƒm[ƒh‚ÍGND(ƒsƒ“”Ô†9)
+REDã‚«ã‚½ãƒ¼ãƒ‰ã¯65Î©ã®æŠµæŠ—ã‚’çµŒç”±ã—ã¦GPIO18(ãƒ”ãƒ³ç•ªå·12)
+BLUEã‚«ã‚½ãƒ¼ãƒ‰ã¯5Î©ã®æŠµæŠ—ã‚’çµŒç”±ã—ã¦GPIO13(ãƒ”ãƒ³ç•ªå·33)
+GREENã‚«ã‚½ãƒ¼ãƒ‰ã¯5Î©ã®æŠµæŠ—ã‚’çµŒç”±ã—ã¦GPIO19(ãƒ”ãƒ³ç•ªå·35)
+ã‚¢ãƒŽãƒ¼ãƒ‰ã¯GND(ãƒ”ãƒ³ç•ªå·9)
 
-### •K—vƒ‰ƒCƒuƒ‰ƒŠ‚ÌƒCƒ“ƒXƒg[ƒ‹ ###
+### å¿…è¦ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ« ###
 $ sudo apt-get install python-rpi.gpio
 https://launchpad.net/python-weather-api/trunk/0.3.8/+download/pywapi-0.3.8.tar.gz
-‚ðƒ_ƒEƒ“ƒ[ƒh‚µ‚Ä“WŠJŒãA
+ã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã—ã¦å±•é–‹å¾Œã€
 $ python setup.py build
 $ python setup.py install
 
-### CRON‚Ö“o˜^ ###
+### CRONã¸ç™»éŒ² ###
 $ sudo crontab -e
 */5 * * * * sudo python /home/pi/python_code/raspi_weather_notify/weather.py
  
-ƒpƒ‰ƒ[ƒ^‚Ì‰ðà
+ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®è§£èª¬
 ----------------
-get_weather_from_weather_com('xxxx') ‚Å’nˆæƒR[ƒh‚ðŽw’è‚·‚éB
+get_weather_from_weather_com('xxxx') ã§åœ°åŸŸã‚³ãƒ¼ãƒ‰ã‚’æŒ‡å®šã™ã‚‹ã€‚
 
-### ’nˆæƒR[ƒh‚Ì’²‚×•û ###
-www.weather.com‚É‚Ä’nˆæ‚ð“ü—Í‚·‚é‚ÆAˆÈ‰º‚Ì‚æ‚¤‚ÉURL‚Ì––”ö‚ª’nˆæƒR[ƒh‚Æ‚È‚éB
+### åœ°åŸŸã‚³ãƒ¼ãƒ‰ã®èª¿ã¹æ–¹ ###
+www.weather.comã«ã¦åœ°åŸŸã‚’å…¥åŠ›ã™ã‚‹ã¨ã€ä»¥ä¸‹ã®ã‚ˆã†ã«URLã®æœ«å°¾ãŒåœ°åŸŸã‚³ãƒ¼ãƒ‰ã¨ãªã‚‹ã€‚
 http://www.weather.com/weather/today/l/JAXX0085:1:JA
-'JAXX0085:1:JA'‚Í“Œ‹ž‚Ì’nˆæƒR[ƒh
+'JAXX0085:1:JA'ã¯æ±äº¬ã®åœ°åŸŸã‚³ãƒ¼ãƒ‰
 
-ŠÖ˜Aî•ñ
+é–¢é€£æƒ…å ±
 --------
-### ŽQlƒTƒCƒg
+### å‚è€ƒã‚µã‚¤ãƒˆ
 https://code.google.com/p/python-weather-api/
 http://ameblo.jp/tetsuro0907/entry-12019192299.html
 http://mamerium.com/raspberry-pi-rpi-gpio-basic/
