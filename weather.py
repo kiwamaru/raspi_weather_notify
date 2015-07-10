@@ -7,7 +7,7 @@ import locale
 precip = 0
 
 d = datetime.datetime.today()
-weather_com_result = pywapi.get_weather_from_weather_com('JAXX6842:1:JA') #’nˆæ‚Ìw’è
+weather_com_result = pywapi.get_weather_from_weather_com('JAXX6842:1:JA') #åœ°åŸŸã®æŒ‡å®š
 
 if d.hour < 16:
     precip = float(weather_com_result['forecasts'][0]['day']['chance_precip'])/100.0
@@ -18,7 +18,7 @@ REDPIN = 18
 BLUEPIN = 13
 GREENPIN = 19
 
-GPIO.setmode(GPIO.BCM) #BCM‚Åƒsƒ“”Ô†w’è
+GPIO.setmode(GPIO.BCM) #BCMã§ãƒ”ãƒ³ç•ªå·æŒ‡å®š
 GPIO.setup(REDPIN,GPIO.OUT)
 GPIO.setup(BLUEPIN,GPIO.OUT)
 GPIO.setup(GREENPIN,GPIO.OUT)
