@@ -1,3 +1,4 @@
+# coding:utf-8
 import  pywapi
 import string
 import RPi.GPIO as GPIO
